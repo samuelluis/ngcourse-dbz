@@ -1,0 +1,19 @@
+<h1>DBZ Main Page</h1>
+<hr>
+<div class="row">
+  <div class="col">
+    <dbz-list
+      [characters]="characters"
+      (editChar)="selectedChar = $event"
+      (deleteChar)="deleteChar($event)"
+    ></dbz-list>
+  </div>
+
+  <div class="col">
+    <dbz-form
+      (onNewCharacter)="saveNew($event)"
+      (onEditCharacter)="select2Edit($event)"
+      [selectedChar]="selectedChar"
+    ></dbz-form>
+  </div>
+</div>

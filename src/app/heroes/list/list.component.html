@@ -1,0 +1,22 @@
+<h1>Heroes List!</h1>
+<hr>
+<table class="table table-striped">
+  <thead>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Alter Ego</th>
+    <th>Skills</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of heroes">
+      <td><span [tooltip]="hero.desc">{{hero.name}}</span></td>
+      <td>{{hero.person.age}}</td>
+      <td><span [tooltip]="hero.person.addressStr || ''">{{hero.person.name}}</span></td>
+      <td>
+        <span *ngFor="let skill of hero.skills; let lastSkill = last">
+          <span [tooltip]="skill.desc">{{skill.name}}</span><span *ngIf="!lastSkill">, </span>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

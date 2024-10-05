@@ -1,0 +1,4 @@
+<h3>Click count: {{ counter }}</h3>
+<button (click)="increase()">+1</button>
+<button [disabled]="counter==0" (click)="decrease()">-1</button>
+<button (click)="reset()">Reset</button>

@@ -1,0 +1,21 @@
+<fieldset>
+  <legend>Characters</legend>
+  <table class="table table-striped">
+    <thead>
+      <th>Name</th>
+      <th>Power</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let character of characters">
+        <td>{{character.name}}</td>
+        <td>{{character.power}}</td>
+        <td class="actions">
+          <button class="btn btn-primary" (click)="select2Edit(character)"><i class="bi bi-pencil"></i></button>
+          <button class="btn btn-danger" (click)="select2Delete(character)"><i class="bi bi-trash"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</fieldset>
+
