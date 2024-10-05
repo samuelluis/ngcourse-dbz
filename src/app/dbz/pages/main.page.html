@@ -3,17 +3,17 @@
 <div class="row">
   <div class="col">
     <dbz-list
-      [characters]="characters"
-      (editChar)="selectedChar = $event"
-      (deleteChar)="deleteChar($event)"
+      [characters]="dbzService.characters"
+      (editChar)="dbzService.selectedChar = $event"
+      (deleteChar)="dbzService.deleteChar($event)"
     ></dbz-list>
   </div>
 
   <div class="col">
     <dbz-form
-      (onNewCharacter)="saveNew($event)"
-      (onEditCharacter)="select2Edit($event)"
-      [selectedChar]="selectedChar"
+      (onNewCharacter)="dbzService.saveNew($event)"
+      (onEditCharacter)="dbzService.select2Edit($event)"
+      [selectedChar]="dbzService.selectedChar"
     ></dbz-form>
   </div>
 </div>

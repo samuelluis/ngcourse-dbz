@@ -11,7 +11,7 @@ export class DbzFormComponent implements OnChanges {
   @Output() onEditCharacter: EventEmitter<Character> = new EventEmitter()
   @Input() selectedChar!: Character;
 
-  character: Character = {name: '', power: 0};
+  character: Character = {id: '', name: '', power: 0};
   editing: boolean = false;
 
   constructor() { }
@@ -33,7 +33,7 @@ export class DbzFormComponent implements OnChanges {
 
   reset() {
     this.editing = false;
-    this.character = {name: '', power: 0};
+    this.character = {id: '', name: '', power: 0};
   }
 
 }

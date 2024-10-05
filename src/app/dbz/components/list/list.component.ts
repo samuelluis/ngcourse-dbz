@@ -8,7 +8,7 @@ import { Character } from '../../interfaces/character';
 })
 export class DbzListComponent {
   @Output() editChar: EventEmitter<Character> = new EventEmitter();
-  @Output() deleteChar: EventEmitter<Character> = new EventEmitter();
+  @Output() deleteChar: EventEmitter<string> = new EventEmitter();
   @Input() characters: Character[] = [];
 
   select2Edit(character: Character) {
@@ -17,6 +17,6 @@ export class DbzListComponent {
 
   select2Delete(character: Character) {
     if(confirm(`Are you sure you want to delete ${character.name}?`))
-      this.deleteChar.emit(character);
+      this.deleteChar.emit(character.id);
   }
 }
